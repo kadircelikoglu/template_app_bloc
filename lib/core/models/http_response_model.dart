@@ -1,4 +1,4 @@
-class HttpResponseModel<T> {
+final class HttpResponseModel<T> {
   int? statusCode;
   T? data;
   String? message;

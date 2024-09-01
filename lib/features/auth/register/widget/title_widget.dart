@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class TitleWidget extends StatelessWidget {
+final class TitleWidget extends StatelessWidget {
   const TitleWidget({super.key});
 
   @override

@@ -18,26 +18,26 @@ import 'package:uuid/uuid.dart';
 class AppHelper {
   static HttpResponseModel checkEmailAndPassword({required String email, required String password}) {
     if (!AppConstants.emailRegex.hasMatch(email)) {
-      return HttpResponseModel(statusCode: 401, message: LocaleKeys.enter_valid_email.tr());
+      return HttpResponseModel(statusCode: HttpStatus.unauthorized, message: LocaleKeys.enter_valid_email.tr());
     }
     if (!AppConstants.passwordRegex.hasMatch(password)) {
-      return HttpResponseModel(statusCode: 401, message: LocaleKeys.enter_valid_password.tr());
+      return HttpResponseModel(statusCode: HttpStatus.unauthorized, message: LocaleKeys.enter_valid_password.tr());
     }
-    return HttpResponseModel(statusCode: 200);
+    return HttpResponseModel(statusCode: HttpStatus.ok);
   }
 
   static HttpResponseModel checkEmail({required String email}) {
     if (!AppConstants.emailRegex.hasMatch(email)) {
-      return HttpResponseModel(statusCode: 401, message: LocaleKeys.enter_valid_email.tr());
+      return HttpResponseModel(statusCode: HttpStatus.unauthorized, message: LocaleKeys.enter_valid_email.tr());
     }
-    return HttpResponseModel(statusCode: 200);
+    return HttpResponseModel(statusCode: HttpStatus.ok);
   }
 
   static HttpResponseModel checkPassword({required String password}) {
     if (!AppConstants.passwordRegex.hasMatch(password)) {
-      return HttpResponseModel(statusCode: 401, message: LocaleKeys.enter_valid_password.tr());
+      return HttpResponseModel(statusCode: HttpStatus.unauthorized, message: LocaleKeys.enter_valid_password.tr());
     }
-    return HttpResponseModel(statusCode: 200);
+    return HttpResponseModel(statusCode: HttpStatus.ok);
   }
 
   static void showErrorMessage(

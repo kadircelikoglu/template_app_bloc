@@ -5,7 +5,7 @@ mixin ForgotPasswordViewMixin {
     HttpResponseModel httpResponseModel = AppHelper.checkEmail(
       email: textEditingController.text.trim(),
     );
-    if (httpResponseModel.statusCode == 200) {
+    if (httpResponseModel.statusCode == HttpStatus.ok) {
       registerBloc.add(
         ForgotPasswordButtonPressed(
           email: textEditingController.text.trim(),

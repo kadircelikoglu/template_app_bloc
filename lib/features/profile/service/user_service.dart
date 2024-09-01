@@ -13,7 +13,7 @@ class UserService extends UserInterface {
   @override
   Future<HttpResponseModel> login({required String email, required String password}) async {
     try {
-      var url = Uri.parse('$_baseUrl/login');
+      final url = Uri.parse('$_baseUrl/login');
       var response = await http.post(
         url,
         body: jsonEncode({
@@ -61,7 +61,7 @@ class UserService extends UserInterface {
   @override
   Future<HttpResponseModel> delete({required String id}) async {
     try {
-      var url = Uri.parse('$_baseUrl/users/$id');
+      final url = Uri.parse('$_baseUrl/users/$id');
       var response = await http.delete(url);
 
       return HttpResponseModel(
@@ -79,8 +79,8 @@ class UserService extends UserInterface {
   @override
   Future<HttpResponseModel> getById({required String id}) async {
     try {
-      var url = Uri.parse('$_baseUrl/users/$id');
-      var response = await http.get(
+      final url = Uri.parse('$_baseUrl/users/$id');
+      final response = await http.get(
         url,
         headers: {
           'Content-Type': 'application/json',
@@ -103,8 +103,8 @@ class UserService extends UserInterface {
   @override
   Future<HttpResponseModel> update({required UserModel userModel}) async {
     try {
-      var url = Uri.parse('$_baseUrl/users/${userModel.id}');
-      var response = await http.put(
+      final url = Uri.parse('$_baseUrl/users/${userModel.id}');
+      final response = await http.put(
         url,
         body: jsonEncode({
           'first_name': userModel.firstName,
@@ -130,8 +130,8 @@ class UserService extends UserInterface {
   @override
   Future<HttpResponseModel> validate({required String token}) async {
     try {
-      var url = Uri.parse('$_baseUrl/validate');
-      var response = await http.get(
+      final url = Uri.parse('$_baseUrl/validate');
+      final response = await http.get(
         url,
         headers: {
           'Content-Type': 'application/json',

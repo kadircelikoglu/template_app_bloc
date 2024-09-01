@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-class UIHelper {
+@immutable
+final class UIHelper {
   static double _deviceWidth = 0.0;
   static double _deviceHeight = 0.0;
   static late BorderRadiusGeometry _borderRadius;

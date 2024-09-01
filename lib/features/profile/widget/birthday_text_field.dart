@@ -9,7 +9,7 @@ import 'package:template_app_bloc/core/constants/color_constants.dart';
 import 'package:template_app_bloc/generated/locale_keys.g.dart';
 import 'package:template_app_bloc/common/helpers/ui_helper.dart';
 
-class BirthdayTextFieldWidget extends StatefulWidget {
+final class BirthdayTextFieldWidget extends StatefulWidget {
   final DateTime? initialDateTime;
   final Function(DateTime) onDateTimeChanged;
   final TextEditingController textEditingController;
@@ -28,7 +28,7 @@ class BirthdayTextFieldWidget extends StatefulWidget {
 
 class _BirthdayTextFieldWidgetState extends State<BirthdayTextFieldWidget> {
   String? suffixText;
-  FocusNode focusNode = FocusNode();
+  final FocusNode focusNode = FocusNode();
   late DateTime _selectedDateTime;
 
   @override
